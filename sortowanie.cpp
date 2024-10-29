@@ -6,7 +6,7 @@ int main() {
     bool b = true;
     cout << "Podaj kolejno 3 rozne cyfry: " << endl;
     cin >> x >> y >> z;
-    cout << "Kolejnosc od najmniejszej do najwiekszej: ";
+    cout << "Posortowane: ";
 
     while (b) {
         if (x<y) {
