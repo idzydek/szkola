@@ -13,4 +13,6 @@ int main() {
     } else {
         cout << "Podane boki nie moga stworzyc trojkata";
     }
+
+    return 0;
 }
