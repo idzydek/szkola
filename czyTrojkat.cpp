@@ -8,10 +8,14 @@ int main() {
     cout << "Podaj kolejno 3 liczby: " << endl;
     cin >> x >> y >> z;
 
-    if (x+y > z || x+z > y || y+z > x) {
-        cout << "Podane boki moga stworzyc trojkat";
+    if (x<0 || y<0 || z<0) {
+        cout << "Bok nie moze byc ujemny!"
     } else {
-        cout << "Podane boki nie moga stworzyc trojkata";
+        if (x+y > z && x+z > y && y+z > x) {
+            cout << "Podane boki moga stworzyc trojkat";
+        } else {
+            cout << "Podane boki nie moga stworzyc trojkata";
+        }
     }
 
     return 0;
