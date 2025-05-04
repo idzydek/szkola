@@ -3,26 +3,27 @@
 
 using namespace std;
 
-const string latin = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+bool latinLetter(char c)
+{
+    return ( c >= 'a' && c <= 'z') || ( c >= 'A' && c <= 'Z');
+}
 
 int main ()
 {
-    string text;
-    ifstream file("file.txt");
-    getline(file, text);
+    int counter = 0;
+    string line;
+    ifstream file("input.txt");
 
-    int counter;
-
-    for (int i=0; i < text.size(); i++)
-    {
-        for (int ca=0; ca < latin.size(); ca++)
-        {
-            if (text[i] == latin[ca])
-                counter++;
-        }
+    while (getline(file, line)) {
+        for (char c : line)
+            if(latinLetter(c)) counter++;
     }
 
-    cout << counter;
+    file.close();
+
+    ofstream output("output.txt");
+    output << "Liczba liter z alfabetu lacinskiego: " << counter;
+    output.close();
 
     return 0;
 }
